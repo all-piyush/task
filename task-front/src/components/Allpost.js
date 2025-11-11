@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import  { useEffect } from 'react'
 import './Allpost.css';
-import { Navigate, Outlet, useNavigate, useOutletContext } from 'react-router-dom';
+import { useNavigate, useOutletContext } from 'react-router-dom';
 import { FaUserCircle } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
 import { FaComments } from "react-icons/fa";

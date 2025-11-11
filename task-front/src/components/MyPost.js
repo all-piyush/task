@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import  { useEffect } from 'react'
 import { FaComments, FaHeart, FaUserCircle } from 'react-icons/fa';
 import { useNavigate, useOutletContext } from 'react-router-dom';
 

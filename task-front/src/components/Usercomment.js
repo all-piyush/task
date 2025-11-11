@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { FaComments, FaHeart, FaUserCircle } from 'react-icons/fa';
 import './Usercomment.css';
 import { IoIosSend } from "react-icons/io";
-import { useLocation, useNavigate, useOutletContext, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 const Usercomment = (props) => {
   const navigate=useNavigate();
   const {id}=useParams();
   const[text,settext]=useState('');
   const[postcomments,setpostcomments]=useState([]);
-  const{liked,setliked,posts,setposts,setrefreshtrigger}=props;
+  const{liked,setliked,posts,setposts}=props;
   const api_url=process.env.REACT_APP_API_URL;
   const selectedpost=posts.find(p=>p._id===id);
   const hearthandle=async(id,mainpost) =>{
@@ -80,7 +80,7 @@ const Usercomment = (props) => {
             <img src={selectedpost.imageurl} alt='' ></img>
           }
           <div className='interaction'>
-              {liked.some(p=>p._id==selectedpost._id)?(<button onClick={()=>hearthandle(selectedpost._id,selectedpost)}><FaHeart className='redheart'/>{selectedpost.likes.count>0 && (<div className='count'>{selectedpost.likes.count}</div>)}</button>)
+              {liked.some(p=>p._id===selectedpost._id)?(<button onClick={()=>hearthandle(selectedpost._id,selectedpost)}><FaHeart className='redheart'/>{selectedpost.likes.count>0 && (<div className='count'>{selectedpost.likes.count}</div>)}</button>)
               :(<button onClick={()=>hearthandle(selectedpost._id,selectedpost)}><FaHeart className='heart'/>{selectedpost.likes.count>0 && (<div className='count'>{selectedpost.likes.count}</div>)}</button>)}
               <button onClick={()=>{commenthandle(selectedpost._id,selectedpost)}}><FaComments className='comments'/></button>
           </div>

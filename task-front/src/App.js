@@ -1,7 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
 import { useEffect, useState } from 'react';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import { Route,Routes} from 'react-router-dom';
 import UserPost from './components/UserPost';
 import UserLogin from './components/UserLogin';

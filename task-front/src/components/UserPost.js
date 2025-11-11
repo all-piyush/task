@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import{ useState } from 'react'
 import { IoCamera } from "react-icons/io5";
 import {Outlet, useNavigate} from 'react-router-dom';
 import './UserPost.css'
