@@ -1,0 +1,49 @@
+#selectedpost-cards{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 1rem;
+}
+#selectedpost-cards #comment-text{
+    position: relative;
+}
+#selectedpost-cards input{
+    height: 2rem;
+    width: 18rem;
+    padding: 0.3rem;
+}
+
+#comment-text #icon{
+    position: absolute;
+    font-size: 1.5rem;
+    right: 0.4rem;
+    bottom: 0.2rem;
+}
+#comment-text button{
+    cursor: pointer;
+}
+.comment-card{
+    padding: 0.5rem;
+    background-color: #E3ECEA;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.comment-card .comment-user{
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap:0.4rem;
+
+}
+.comment-card .comment-user .usericon{
+    width: 22px;
+    height: 22px;
+    object-fit: cover;
+    display: flex;
+    flex-shrink: 0;
+}
+.comment-card .comment-text{
+    margin-top: -0.4rem;
+}
