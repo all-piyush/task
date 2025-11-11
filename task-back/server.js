@@ -9,7 +9,8 @@ app.use(express.json());
 app.use(cookieparser());
 
 app.use(cors({
-  origin:'http://localhost:3000', 
+
+  origin:['http://localhost:3000',"https://task-l6lgrasdg-piyushs-projects-8042040d.vercel.app"], 
   credentials: true,               
 }));
 app.use(fileupload({

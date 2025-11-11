@@ -15,7 +15,7 @@ exports.login=async(req,res)=>{
         if(ispasswordcorrect){
             const payload={email:exists.email,password:exists.password,name:exists.name,_id:exists._id};
             const token=await jwt.sign(payload,process.env.JWT_SECRET,{expiresIn:'1d'});
-            const options={expires:new Date(Date.now()+24*60*60*1000),httpOnly:true,sameSite:'Lax',secure:false,path:'/'};
+            const options={expires:new Date(Date.now()+24*60*60*1000),httpOnly:true,sameSite:'None',secure:true,path:'/'};
             return res.cookie("token",token,options).status(200).json({
                 message:"User Logged In Successfully",
                 success:true
@@ -49,7 +49,7 @@ exports.signup=async(req,res)=>{
 
         const payload={email:email,password:password,name:name,_id:newuser._id};
             const token=await jwt.sign(payload,process.env.JWT_SECRET,{expiresIn:'1d'});
-            const options={expires:new Date(Date.now()+24*60*60*1000),httpOnly:true,sameSite:'Lax',secure:false,path:'/'};
+            const options={expires:new Date(Date.now()+24*60*60*1000),httpOnly:true,sameSite:'None',secure:true,path:'/'};
             return res.cookie("token",token,options).status(200).json({
                 message:"User Logged In Successfully",
                 success:true
